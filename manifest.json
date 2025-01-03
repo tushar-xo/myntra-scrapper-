@@ -1,0 +1,35 @@
+{
+  "name": "Myntra Data Scraper",
+    "version": "1.0.1",
+    "description": "Scrapes product data from myntra",
+    "permissions": [
+      "storage",
+      "activeTab",
+      "scripting",
+      "tabs",
+      "https://localhost/5002/"
+    ],
+    "host_permissions": [
+      "https://www.myntra.com/*",
+      "http://localhost:5002/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+    "default_popup": "popup.html",
+    "default_title": "Myntra Scraper"
+  },
+    "content_scripts": [
+      {
+        "matches": [
+          "https://www.myntra.com/*"
+        ],
+        "js": [
+          "contentScript.js"
+        ]
+      }
+    ],
+    "manifest_version": 3
+  }
+  
